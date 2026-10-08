@@ -1,56 +1,56 @@
 <!doctype html>
 <html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Paisa Plan</title>
-<style>
-:root{--bg:#f5f3fb;--card:#fff;--ink:#1d1a2b;--mut:#7a7690;--ac:#6c4cf5;--ok:#1f9d63;--wr:#e69a1d;--bad:#e5484d;--line:#e8e5f2}
-@media(prefers-color-scheme:dark){:root{--bg:#12101a;--card:#1c1928;--ink:#f1eefc;--mut:#9a95b5;--ac:#8d73ff;--line:#2c2840}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.4 system-ui,sans-serif;padding-top:env(safe-area-inset-top)}
+<style>:root{--bg:#f4f2fb;--card:#fff;--ink:#1b1830;--mut:#7a7692;--ac:#6c4cf5;--ok:#16a36a;--wr:#e69a1d;--bad:#e5484d;--line:#ebe8f5;--sh:0 6px 20px #6c4cf514}
+@media(prefers-color-scheme:dark){:root{--bg:#0f0d18;--card:#1a1727;--ink:#f1eefc;--mut:#9a95b5;--ac:#8d73ff;--line:#2a2640;--sh:none}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;padding-top:env(safe-area-inset-top)}
 .w{max-width:560px;margin:0 auto;padding:12px 14px 90px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;margin:0 0 12px}
-.top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 12px}
-.top h1{font-size:18px;margin:0;text-align:center;flex:1}
-button{font:inherit;font-weight:600;border:0;border-radius:12px;padding:9px 14px;background:var(--ac);color:#fff;cursor:pointer}
-button.g{background:transparent;color:var(--ink);border:1px solid var(--line)}
-button.x{background:transparent;color:var(--mut);padding:4px 8px}
-input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 12px;width:100%}
-textarea{min-height:110px}
-label{display:block;font-size:12px;color:var(--mut);margin:10px 0 4px}
-.big{font-size:26px;font-weight:700}
+.top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 14px;text-align:center}.top>div{flex:1}.lg{font-size:11px;font-weight:800;color:var(--ac);letter-spacing:1px}.top h1{font-size:19px;margin:2px 0 0}#cyc,.mt,.hint{color:var(--mut)}#cyc{font-size:12px}.hint{font-size:12px;margin-top:8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;margin:0 0 14px;box-shadow:var(--sh)}.card h2{font-size:16px;margin:0 0 12px}
+.hero{border-radius:24px;padding:20px 18px;margin:0 0 14px;color:#fff;background:linear-gradient(135deg,#5b3cf0,#9a5cff 70%,#c46bff);box-shadow:0 10px 30px #6c4cf544}.hero.wr{background:linear-gradient(135deg,#e08a00,#f5b83d)}.hero.bad{background:linear-gradient(135deg,#d6343a,#ff6b6b)}
+.hl{font-size:13px;opacity:.9}.hb{font-size:40px;font-weight:800;line-height:1.1;margin:2px 0 10px}.hb small{font-size:14px;font-weight:600;opacity:.85}.hm{font-size:14px;font-weight:600;margin:12px 0 14px}
+.hero .bar{background:#ffffff44;height:12px}.hero .bar i{background:#fff!important}
+.hs{display:grid;grid-template-columns:1fr 1fr;gap:8px}.hs div{background:#ffffff26;border-radius:14px;padding:8px 10px}.hs small{display:block;font-size:11px;opacity:.9}.hs b{font-size:17px}
+button{font:inherit;font-weight:700;border:0;border-radius:14px;padding:11px 16px;background:linear-gradient(135deg,#6c4cf5,#9a5cff);color:#fff;cursor:pointer}button:active{transform:scale(.97)}
+button.g{background:transparent;color:var(--ink);border:1px solid var(--line)}button.x{background:transparent;color:var(--mut);padding:4px 8px}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:11px 13px;width:100%}input:focus,select:focus,textarea:focus{outline:2px solid var(--ac)}textarea{min-height:100px}
+label{display:block;font-size:12px;font-weight:600;color:var(--mut);margin:12px 0 4px}
 .tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tile{background:var(--bg);border-radius:14px;padding:10px 12px}.tile small{color:var(--mut);display:block;font-size:12px}.tile b{font-size:18px}
 .bar{height:10px;border-radius:99px;background:var(--line);overflow:hidden;margin:6px 0 2px}.bar i{display:block;height:100%;border-radius:99px;background:var(--ok)}
 .gr{margin:0 0 14px}.gr div.h{display:flex;justify-content:space-between;font-weight:600}.gr small{color:var(--mut)}
-.row{display:flex;gap:8px;align-items:center}.row>*{flex:1}.row>button{flex:0 0 auto}
-.it{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 0;border-top:1px solid var(--line)}.it:first-child{border-top:0}.it small{color:var(--mut);display:block}.it b{white-space:nowrap}
-.dt{font-size:12px;color:var(--mut);margin:12px 0 2px}
-.bn{background:#e69a1d22;border:1px solid var(--wr);border-radius:12px;padding:10px;margin:0 0 12px;font-size:13px}
-#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:99px;font-size:13px;opacity:0;pointer-events:none;transition:opacity .3s}#toast.on{opacity:1}
-details summary{cursor:pointer;font-weight:600}
-.dc{border-top:1px solid var(--line);padding:10px 0}.dc:first-child{border-top:0}.sp{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}.chip{font-size:12px;font-weight:700;padding:2px 9px;border-radius:99px}.cg{background:#1f9d6326;color:var(--ok)}.cr{background:#e5484d26;color:var(--bad)}.mt{color:var(--mut)}.al{border-radius:12px;padding:10px;margin:8px 0;font-size:13px;font-weight:600}.ar{background:#e5484d22;border:1px solid var(--bad)}.aw{background:#e69a1d22;border:1px solid var(--wr)}.ao{background:#1f9d6322;border:1px solid var(--ok)}</style></head><body><div class="w">
-<div class="top"><button class="g" id="pm">◀</button><h1 id="ml"></h1><button class="g" id="nm">▶</button></div>
+.row{display:flex;gap:8px;align-items:center}.row>*{flex:1}.row>button{flex:0 0 auto}.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.it{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--line)}.it small{color:var(--mut);display:block}.it b{white-space:nowrap}
+.bn{background:#e69a1d22;border:1px solid var(--wr);border-radius:14px;padding:10px;margin:0 0 14px;font-size:13px}
+.dc{border:1px solid var(--line);border-left:5px solid var(--ok);border-radius:16px;padding:12px;margin:0 0 10px}.dc.w2{border-left-color:var(--wr)}.dc.b2{border-left-color:var(--bad)}.dc.t2{border-left-color:var(--ac);background:#6c4cf50d}
+.sp{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}.dg{display:flex;gap:6px;margin:8px 0 4px}.dg div{flex:1;background:var(--bg);border-radius:10px;padding:6px 8px;min-width:0}.dg small{display:block;font-size:10px;color:var(--mut)}.dg b{font-size:13px}
+.chip{font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px}.cg{background:#16a36a22;color:var(--ok)}.cr{background:#e5484d22;color:var(--bad)}.cw{background:#e69a1d22;color:var(--wr)}.cp{background:#6c4cf522;color:var(--ac)}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:99px;font-size:13px;opacity:0;pointer-events:none;transition:opacity .3s;max-width:90%;text-align:center}#toast.on{opacity:1}
+details summary{cursor:pointer;font-weight:700}
+</style></head><body><div class="w">
+<div class="top"><button class="g" id="pm">◀</button><div><div class="lg">💸 PAISA PLAN</div><h1 id="ml"></h1><div id="cyc"></div></div><button class="g" id="nm">▶</button></div>
 <div id="bnr"></div><div id="td"></div>
-<div class="card"><label style="margin-top:0">💼 Is mahine ki salary (₹)</label><input id="sal" type="number" inputmode="decimal" placeholder="jaise 50000"><label>📅 Salary kis tareekh ko aati hai (har mahine)</label><input id="sd" type="number" min="1" max="28" inputmode="numeric"><div id="cyc" class="mt" style="font-size:12px;margin-top:6px"></div><div id="sum" style="margin-top:12px"></div></div>
-<div class="card" id="bars"></div>
-<div class="card"><b>⚡ Smart add: bas likho, baaki apne aap</b><input id="qa" type="text" style="margin-top:8px" placeholder="chai 20; zomato 250; auto 60 kal  |  ? 500 = kharch se pehle check"><button id="qb" style="width:100%;margin-top:8px">Add karo</button><details style="margin-top:12px"><summary>📩 Bank/UPI SMS se auto-add</summary><textarea id="sms" style="margin-top:8px" placeholder="Bank ke debit SMS yahan paste karo (ek ya kai). Salary credit SMS se salary bhi set ho jayegi."></textarea><div class="row" style="margin-top:8px"><button id="sb">SMS se add karo</button><button class="g" id="smc">📋 Clipboard se</button></div></details></div><div class="card"><b>➕ Kharcha ya saving likho</b>
- <div class="row" style="margin-top:8px"><input id="fa" type="number" inputmode="decimal" placeholder="Amount ₹"><input id="fd" type="date"></div>
- <label>Category</label><select id="fc"></select>
- <label>Note (optional)</label><input id="fn" type="text" placeholder="jaise Zomato, petrol, SIP...">
- <button id="fb" style="width:100%;margin-top:12px">Add karo</button></div>
-<div class="card"><b>📅 Din ke hisaab se: roz ka kharcha vs limit</b><div id="lst"></div></div>
-<div class="card"><b>📊 Category ke hisaab se</b><div id="cat" style="margin-top:6px"></div></div>
-<details class="card" id="set"><summary>⚙️ Settings (split, categories, fixed kharche)</summary>
- <label>Salary ka split % (Zaroorat / Shauk / Savings), total 100 hona chahiye</label>
- <div class="row"><input id="sn" type="number"><input id="sw" type="number"><input id="ss" type="number"></div>
- <label>Categories, har line "Naam | need ya want ya save"</label><textarea id="sc"></textarea>
- <label>Fixed kharche jo har mahine apne aap jud jayen, har line "Naam | amount | Category | din (optional, 1-28)"</label><textarea id="sr" placeholder="Room rent | 8000 | Rent / EMI&#10;SIP | 3000 | SIP / Investment"></textarea>
- <button id="ssv" style="width:100%;margin-top:12px">Settings save karo</button><button class="g" id="sfx" style="width:100%;margin-top:8px">Fixed kharche abhi is mahine me jodo</button></details>
-<div class="card"><b>💾 Backup</b><p style="color:var(--mut);font-size:13px;margin:6px 0 10px">Data sirf is phone ke browser me rehta hai. Mahine me ek baar backup download karke Drive me rakh lo.</p>
- <div class="row"><button id="ex">Backup lo</button><button class="g" id="im">Backup kholo</button><button class="g" id="cs">CSV</button></div><input type="file" id="imf" accept=".json" hidden></div>
+<div class="card"><h2>⚡ Kharcha likho, baaki app sambhalega</h2><div class="row"><input id="qa" type="text" placeholder="chai 20; doodh 30 kal"><button id="qb">Add</button></div><div class="hint">Category apne aap lagegi. <b>? 500</b> = kharch se pehle check. <b>+3000 mummy</b> = extra paisa mila.</div>
+<details style="margin-top:12px"><summary>📩 Bank/UPI SMS se auto-add</summary><textarea id="sms" style="margin-top:8px" placeholder="Debit SMS paste karo (ek ya kai). Salary credit SMS se salary bhi set ho jayegi."></textarea><div class="row" style="margin-top:8px"><button id="sb">SMS se add karo</button><button class="g" id="smc">📋 Clipboard se</button></div></details></div>
+<div class="card"><h2>📅 Din ke hisaab se</h2><div id="lst"></div></div>
+<div class="card"><h2>🧾 Is cycle ka setup</h2><div class="g2"><div><label style="margin-top:0">Salary ₹</label><input id="sal" type="number" inputmode="decimal" placeholder="jaise 15272"></div><div><label style="margin-top:0">🏠 Ghar ko diya ₹</label><input id="hm" type="number" inputmode="decimal" placeholder="jaise 14000"></div></div>
+<label>📅 Salary kis tareekh ko aati hai</label><input id="sd" type="number" min="1" max="28" inputmode="numeric"><div id="plan"></div><div id="bars"></div><div id="sum" style="margin-top:12px"></div></div>
+<div class="card"><h2>💰 Extra paisa mila (mummy / side)</h2><div class="row"><input id="ia" type="number" inputmode="decimal" placeholder="Amount ₹"><input id="inn" type="text" placeholder="Kisne diya"><button id="ib">Add</button></div><div id="inl"></div></div>
+<details class="card"><summary>➕ Detail se kharcha / saving add karo</summary><div class="row" style="margin-top:8px"><input id="fa" type="number" inputmode="decimal" placeholder="Amount ₹"><input id="fd" type="date"></div><label>Category</label><select id="fc"></select><label>Note (optional)</label><input id="fn" type="text" placeholder="jaise Zomato, petrol, SIP..."><button id="fb" style="width:100%;margin-top:12px">Add karo</button></details>
+<div class="card"><h2>📊 Category ke hisaab se</h2><div id="cat"></div></div>
+<details class="card" id="set"><summary>⚙️ Settings (categories, fixed kharche)</summary>
+<label style="display:flex;gap:8px;align-items:center;color:var(--ink)"><input type="checkbox" id="smp" style="width:auto"> Simple mode: Salary − Ghar = apna budget (split % band)</label>
+<label>Salary ka split % (Zaroorat / Shauk / Savings), total 100 (sirf simple mode band ho to)</label><div class="row"><input id="sn" type="number"><input id="sw" type="number"><input id="ss" type="number"></div>
+<label>Categories, har line "Naam | need ya want ya save"</label><textarea id="sc"></textarea>
+<label>Fixed kharche jo apne aap jud jayen, har line "Naam | amount | Category | din (optional, 1-28)"</label><textarea id="sr" placeholder="Recharge | 299 | Bills (bijli, net, phone) | 7"></textarea>
+<button id="ssv" style="width:100%;margin-top:12px">Settings save karo</button><button class="g" id="sfx" style="width:100%;margin-top:8px">Fixed kharche abhi is cycle me jodo</button></details>
+<div class="card"><h2>🔐 Secret account</h2><div id="vault"></div></div>
+<div class="card"><h2>💾 Backup</h2><p class="mt" style="font-size:13px;margin:0 0 10px">Data sirf is phone ke browser me rehta hai. Mahine me ek baar backup download karke Drive me rakh lo.</p><div class="row"><button id="ex">Backup lo</button><button class="g" id="im">Backup kholo</button><button class="g" id="cs">CSV</button></div><input type="file" id="imf" accept=".json" hidden></div>
 </div><div id="toast"></div>
 <script>
 var $=function(i){return document.getElementById(i)},K='paisaplan_v1';
 var DC=[['Rent / EMI','need'],['Kirana / Khana','need'],['Bills (bijli, net, phone)','need'],['Travel / Fuel','need'],['Ghar / Family','need'],['Bahar khana','want'],['Shopping','want'],['Entertainment','want'],['Subscriptions','want'],['SIP / Investment','save'],['Emergency fund','save'],['Gold / Other saving','save']];
 var GN={need:'🏠 Zaroorat',want:'🛍️ Shauk',save:'💰 Savings'};
-var S=load(),cm;S.mem=S.mem||{};if(!S.cfg.sd)rb(7);cm=ck();
+var S=load(),cm;S.mem=S.mem||{};if(S.cfg.simple===undefined)S.cfg.simple=1;if(!S.cfg.sd)rb(7);cm=ck();
 function load(){try{var j=JSON.parse(localStorage.getItem(K));if(j&&j.months)return j}catch(e){}return{cfg:{need:50,want:30,save:20,rec:[],bk:0},cats:DC.map(function(c){return{n:c[0],g:c[1]}}),months:{}}}
 function save(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){toast('Save nahi hua: browser storage band hai')}}
 function ym(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')}
@@ -66,7 +66,7 @@ function ce(k){var d=cd(nk(k,1));d.setDate(d.getDate()-1);return d}
 function ck(t){t=t||new Date();return t.getDate()>=S.cfg.sd?ym(t):nk(ym(t),-1)}
 function nd(a,b){return Math.round((b-a)/864e5)}
 function isF(e){return e.f||/\(fixed\)$/.test(e.n||'')}
-function rb(v){var all=[],sl={},k;for(k in S.months){sl[k]=S.months[k].sal;all=all.concat(S.months[k].exp)}S.months={};S.cfg.sd=v;all.forEach(function(e){var q=ck(pd(e.d)),m=S.months[q]||(S.months[q]={sal:'',exp:[],fx:{}});m.exp.push(e);if(isF(e))m.fx[e.n.replace(/ \(fixed\)$/,'')]=1});for(k in sl)if(+sl[k]){if(!S.months[k])S.months[k]={sal:'',exp:[],fx:{}};S.months[k].sal=sl[k]}save()}
+function rb(v){var all=[],ii=[],hh={},sl={},k;for(k in S.months){sl[k]=S.months[k].sal;all=all.concat(S.months[k].exp);ii=ii.concat(S.months[k].inc||[]);hh[k]=S.months[k].home}S.months={};S.cfg.sd=v;all.forEach(function(e){var q=ck(pd(e.d)),m=S.months[q]||(S.months[q]={sal:'',exp:[],fx:{}});m.exp.push(e);if(isF(e))m.fx[e.n.replace(/ \(fixed\)$/,'')]=1});for(k in sl)if(+sl[k]){if(!S.months[k])S.months[k]={sal:'',exp:[],fx:{}};S.months[k].sal=sl[k]}for(k in hh)if(+hh[k]){if(!S.months[k])S.months[k]={sal:'',exp:[],fx:{}};S.months[k].home=hh[k]}ii.forEach(function(x){var q=ck(pd(x.d)),m=S.months[q]||(S.months[q]={sal:'',exp:[],fx:{}});(m.inc=m.inc||[]).push(x)});save()}
 function prevSal(k){var q=Object.keys(S.months).filter(function(x){return x<k&&+S.months[x].sal}).sort().pop();return q?S.months[q].sal:''}
 function M(k){k=k||cm;S.cfg.sd=S.cfg.sd||7;S.mem=S.mem||{};var m=S.months[k];if(!m)m=S.months[k]={sal:prevSal(k),exp:[],fx:{}};
  if(!m.fx){m.fx={};if(m.rec)(S.cfg.rec||[]).forEach(function(r){m.fx[r.n]=1})}
@@ -79,40 +79,78 @@ function gc(n){var w=n.split(' '),i,k;for(i=0;i<w.length;i++)if(S.mem[w[i]]&&hs(
 function qp(t){var s=t.toLowerCase().replace(/₹|rs\.?|inr/g,' '),d=new Date(),m=s.match(/(\d[\d,]*\.?\d*)\s*(k\b)?/);if(!m)return;var a=parseFloat(m[1].replace(/,/g,''))*(m[2]?1000:1);
  if(/\b(kal|yesterday)\b/.test(s))d.setDate(d.getDate()-1);else if(/\bparso\b/.test(s))d.setDate(d.getDate()-2);
  var n=s.replace(m[0],' ').replace(/\b(kal|yesterday|parso|aaj|today|ka|ke|ki|ko|me|mein|diya|diye|kiya|kharcha|spent|paid)\b/g,' ').replace(/\s+/g,' ').trim();return{a:a,d:ds(d),n:n,c:gc(n)}}
+function addI(d,a,n){var m=M(ck(pd(d)));(m.inc=m.inc||[]).push({id:Date.now()+Math.random(),d:d,a:a,n:n})}
 function addE(d,a,c,n,h){var e={id:Date.now()+Math.random(),d:d,a:a,c:c,n:n};if(h)e.h=h;M(ck(pd(d))).exp.push(e)}
 var ST={tl:0,ts:0};
-function aft(b){save();render();if(ST.live&&ST.tl>0&&ST.ts>ST.tl+.5){var x=rs(ST.ts-ST.tl)+' zyada';if(b>=0){try{navigator.vibrate(300)}catch(e){}alert('🚨 Aaj ka limit paar ho gaya! '+x+'. Ab aur kharch mat karo, warna kal ka limit bhi kam ho jayega.')}else toast('🚨 Aaj limit se '+x)}}
+function V(){return S.vault||(S.vault={pin:'',tx:[],auto:{},pct:0})}
+function hp(p){var h=5381,i,x=p+'|paisa';for(i=0;i<x.length;i++)h=((h<<5)+h+x.charCodeAt(i))|0;return String(h)}
+function vbal(){var v=V(),t=0,k;v.tx.forEach(function(x){t+=x.a});for(k in v.auto)t+=v.auto[k];return t}
+var VU=0,VTm;
+function vlock(){VU=0;renderV()}
+function renderV(){var v=V(),h,pin='<input id="vp" type="password" inputmode="numeric" maxlength="6" autocomplete="off" placeholder="PIN (4-6 ank)">';
+ if(!v.pin)h='<p class="mt" style="margin:0 0 8px">Pehle apna PIN banao. Bina PIN ke ye section khulega nahi.</p>'+pin+'<button data-v="set" style="width:100%;margin-top:8px">PIN set karo</button>';
+ else if(!VU)h=pin.replace('PIN (4-6 ank)','PIN daalo')+'<button data-v="unlock" style="width:100%;margin-top:8px">Kholo 🔓</button>';
+ else{var at=0,k;for(k in v.auto)at+=v.auto[k];
+  h='<div class="mt" style="font-size:12px">Secret balance</div><div style="font-size:32px;font-weight:800">'+rs(vbal())+'</div><div class="mt" style="font-size:12px">Roz ke bache se apne aap jama: '+rs(at)+'</div>'+
+  '<div class="row" style="margin-top:12px"><input id="va" type="number" inputmode="decimal" placeholder="Amount ₹"><input id="vn" type="text" placeholder="Note (optional)"></div><div class="row" style="margin-top:8px"><button data-v="dep">➕ Jama karo</button><button class="g" data-v="wd">➖ Nikaalo</button></div>'+
+  '<label>Roz ke bache hue limit ka kitna % apne aap secret me jaye (0 = band)</label><div class="row"><input id="vpc" type="number" min="0" max="100" value="'+(+v.pct||0)+'"><button class="g" data-v="pct">Save</button></div>'+
+  '<div style="margin-top:12px">'+v.tx.slice(-15).reverse().map(function(x){return'<div class="it"><div>'+esc(x.n||(x.a>0?'Jama':'Nikaala'))+'<small>'+x.d+'</small></div><div><b style="color:'+(x.a>0?'var(--ok)':'var(--bad)')+'">'+(x.a>0?'+':'−')+rs(Math.abs(x.a))+'</b><button class="x" data-v="del" data-id="'+x.id+'">✕</button></div></div>'}).join('')+'</div>'+
+  '<label>PIN badlo</label><div class="row"><input id="vnp" type="password" inputmode="numeric" maxlength="6" autocomplete="off" placeholder="Naya PIN"><button class="g" data-v="chg">Badlo</button></div><button class="g" data-v="lock" style="width:100%;margin-top:10px">🔒 Lock karo</button><p class="hint">Ye balance upar total Savings me judta hai. PIN sirf screen se chhupata hai. Backup file me ye data bhi jata hai, usko safe rakho. 1 minute baad apne aap lock ho jata hai.</p>'}
+ $('vault').innerHTML=h}
+document.addEventListener('click',function(e){var a=e.target.getAttribute&&e.target.getAttribute('data-v');if(!a)return;var v=V(),p=$('vp')?$('vp').value:'',am=$('va')?+$('va').value:0;clearTimeout(VTm);
+ if(a==='set'||a==='chg'){var np=a==='set'?p:$('vnp').value;if(!/^\d{4,6}$/.test(np)){toast('PIN 4 se 6 ank ka hona chahiye');return}v.pin=hp(np);VU=1;save();toast('PIN set ho gaya ✅')}
+ else if(a==='unlock'){if(hp(p)!==v.pin){toast('Galat PIN');return}VU=1}
+ else if(a==='dep'||a==='wd'){if(!(am>0)){toast('Amount likho');return}if(a==='wd'&&am>vbal()+.5){toast('Secret me itna balance nahi hai ('+rs(vbal())+')');return}v.tx.push({id:Date.now()+Math.random(),d:ds(new Date()),a:a==='dep'?am:-am,n:$('vn').value.trim()});save();render();toast(a==='dep'?'Secret me jama ho gaya ✅':'Nikaal liya ✅')}
+ else if(a==='pct'){v.pct=Math.min(100,Math.max(0,Math.round(+$('vpc').value||0)));save();render();toast(v.pct?'Ab roz ke bache ka '+v.pct+'% secret me jayega ✅':'Auto-jama band')}
+ else if(a==='del'){var id=e.target.getAttribute('data-id');if(!confirm('Ye entry hatani hai?'))return;v.tx=v.tx.filter(function(x){return String(x.id)!==id});save();render()}
+ else if(a==='lock'){VU=0}
+ if(VU)VTm=setTimeout(vlock,6e4);renderV()});
+document.addEventListener('visibilitychange',function(){if(document.hidden)vlock()});
+function aft(b){var pm=ST.mn;save();render();if(ST.live&&ST.tl>0&&ST.ts>ST.tl+.5){var o=ST.mn>0?rs(ST.mn)+' minus ho gaya (limit aur savings dono khatam)':rs(ST.ts-ST.tl)+' savings se ja raha hai';if(b>=0||(pm<=0&&ST.mn>0)){try{navigator.vibrate(300)}catch(e){}alert('🚨 Aaj ka limit paar! '+o+'. Ab aur kharch mat karo.')}else toast('🚨 '+o)}}
+function dstr(st,i){return ds(new Date(st.getFullYear(),st.getMonth(),st.getDate()+i))}
 function render(){
- var m=M(),sal=+m.sal||0,c=S.cfg,st=cd(cm),en=ce(cm),tot=nd(st,en)+1,now=new Date(),td=ds(now),t0=pd(td),live=cm===ck(),
- al={need:sal*c.need/100,want:sal*c.want/100,save:sal*c.save/100},sp={need:0,want:0,save:0},bc={},fxb=0,dy={},fs=0;
+ var m=M(),sal=+m.sal||0,c=S.cfg,st=cd(cm),en=ce(cm),tot=nd(st,en)+1,td=ds(new Date()),t0=pd(td),live=cm===ck(),home=+m.home||0,ns=Math.max(0,sal-home),inc=m.inc||[],ex=0,
+ al=c.simple?{need:ns,want:0,save:0}:{need:sal*c.need/100,want:sal*c.want/100,save:sal*c.save/100},sp={need:0,want:0,save:0},bc={},fxb=0,dy={},fs=0;
+ inc.forEach(function(x){ex+=x.a});
  m.exp.forEach(function(e){var q=g(e.c);sp[q]+=e.a;bc[e.c]=(bc[e.c]||0)+e.a;if(q!=='save'){if(isF(e))fxb+=e.a;else{fs+=e.a;dy[e.d]=(dy[e.d]||0)+e.a}}});
  (c.rec||[]).forEach(function(r){if(!m.fx[r.n]&&g(r.c)!=='save')fxb+=+r.a});
- var flex=Math.max(0,al.need+al.want-fxb),L=flex/tot,el=t0>en?tot:t0<st?0:nd(st,t0)+1,tdSp=dy[td]||0,dl=Math.max(1,tot-el+1),
- tl=Math.max(0,(flex-(fs-tdSp))/dl),tL=tl-tdSp,net=el*L-fs,au=Math.max(0,net),nx=nd(t0,cd(nk(cm,1))),proj=el?fs/el*tot:0;
- ST={tl:tl,ts:tdSp,live:live};
+ var flex0=Math.max(0,al.need+al.want-fxb),flex=flex0+ex,el=t0>en?tot:t0<st?0:nd(st,t0)+1,tdSp=dy[td]||0,lim=[],D=[],i0,sv=0,mt=0,rem=0,nx=nd(t0,cd(nk(cm,1)));
+ for(i0=0;i0<tot;i0++){var z=flex0/tot;inc.forEach(function(x){var ix=Math.min(tot-1,Math.max(0,nd(st,pd(x.d))));if(ix<=i0)z+=x.a/(tot-ix)});lim.push(z)}
+ for(i0=0;i0<(live?el-1:el);i0++){var lm=lim[i0],s0=dy[dstr(st,i0)]||0,r0={l:lm,s:s0,b:0,u:0,mn:0};if(s0<=lm){r0.b=lm-s0;var dk=dstr(st,i0),va=V(),sc=(va.auto[dk]!==undefined&&i0<el-4)?Math.min(va.auto[dk],Math.floor(r0.b)):Math.floor(r0.b*(+va.pct||0)/100);if(live&&(va.auto[dk]!==undefined||sc>0))va.auto[dk]=sc;sv+=r0.b-sc}else{var o=s0-lm;r0.u=Math.min(sv,o);sv-=r0.u;r0.mn=o-r0.u;mt+=r0.mn}r0.sv=sv;D[i0]=r0}
+ var tl=lim[Math.max(0,Math.min(el,tot)-1)],tL=tl-tdSp,tOv=live?Math.max(0,tdSp-tl):0,fSv=Math.min(sv,tOv),tMn=tOv-fSv,svN=sv-fSv,cash=sal+ex-home-(sp.need+sp.want+sp.save);
+ for(i0=el;i0<tot;i0++)rem+=lim[i0];if(live)rem+=Math.max(0,tL);
+ ST={tl:tl,ts:tdSp,live:live,sa:svN,mn:tMn};
  var fd=function(d){return d.toLocaleDateString('en-IN',{day:'numeric',month:'short'})};
- $('ml').textContent=fd(st)+' – '+fd(en)+' '+en.getFullYear();
+ $('ml').textContent=fd(st)+' – '+fd(en);
  $('cyc').textContent=tot+' din ka cycle'+(live?' · salary aane me '+nx+' din':'');
  if(document.activeElement!==$('sd'))$('sd').value=c.sd;
+ if(document.activeElement!==$('hm'))$('hm').value=home||'';$('smp').checked=!!c.simple;
  if(document.activeElement!==$('sal'))$('sal').value=sal||'';
- var out=sp.need+sp.want+sp.save,left=sal-out;
- $('sum').innerHTML=sal?'<div class="tiles"><div class="tile"><small>Kharch (zaroorat+shauk)</small><b>'+rs(sp.need+sp.want)+'</b></div><div class="tile"><small>Savings (SIP + daily bachat)</small><b style="color:var(--ok)">'+rs(sp.save+au)+'</b></div><div class="tile"><small>Abhi bacha</small><b style="color:'+(left<0?'var(--bad)':'inherit')+'">'+rs(left)+'</b></div><div class="tile"><small>'+(live?'Roz ka base limit':'Savings rate')+'</small><b>'+(live?rs(L):Math.round((sp.save+au)/sal*100)+'%')+'</b></div></div>':'<p class="mt" style="margin:0">Upar salary daalo, phir saara plan apne aap ban jayega 👆</p>';
- var T='';
- if(live&&sal){var pc=tl?tdSp/tl*100:(tdSp?100:0),n2=dl>1?Math.max(0,(flex-fs)/(dl-1)):0;
-  T='<div class="card"><b>📍 Aaj ka hisaab</b>'+(tL<-.5?'<div class="al ar">🚨 Aaj limit se '+rs(-tL)+' zyada kharch ho gaya! Ab kharch mat karo.'+(dl>1?' Baaki '+(dl-1)+' din ka limit ghat ke '+rs(n2)+'/din ho gaya.':'')+'</div>':pc>80?'<div class="al aw">⚠️ Aaj ka '+Math.round(pc)+'% limit ho gaya, sirf '+rs(tL)+' bacha hai.</div>':'<div class="al ao">✅ Aaj '+rs(tL)+' tak kharch kar sakte ho.</div>')+(proj>flex&&flex>0?'<div class="al aw">📈 Is raftaar se cycle me '+rs(proj-flex)+' zyada kharch ho jayega.</div>':'')+
-  '<div class="tiles"><div class="tile"><small>Aaj ka limit</small><b>'+rs(tl)+'</b></div><div class="tile"><small>Aaj kharch</small><b>'+rs(tdSp)+'</b></div><div class="tile"><small>Roz ka base limit</small><b>'+rs(L)+'</b></div><div class="tile"><small>Daily bachat ab tak</small><b style="color:'+(net<0?'var(--bad)':'var(--ok)')+'">'+rs(net)+'</b></div></div><div class="bar"><i style="width:'+Math.min(100,pc)+'%;background:'+(tL<0?'var(--bad)':pc>80?'var(--wr)':'var(--ok)')+'"></i></div><small class="mt">Cycle khatam hone par jo bachega wo apne aap Savings me jayega 💰</small></div>'}
+ var out=sp.need+sp.want+sp.save,left=sal+ex-home-out,T='';
+ if(!sal)T='<div class="hero"><div class="hl">Shuruaat karo 👋</div><div class="hm">Neeche "Is cycle ka setup" me salary aur ghar ko diya paisa daalo. Phir roz ka limit apne aap ban jayega.</div></div>';
+ else if(!live)T='<div class="hero"><div class="hl">Ye cycle ka saar</div><div class="hb">'+rs(sp.save+sv)+'<small> Savings 💰</small></div><div class="hm">Minus rahe: '+rs(mt)+' · Asli paisa bacha: '+rs(cash)+'</div></div>';
+ else{var pc=tl?tdSp/tl*100:(tdSp?100:0),cls=tMn>0?'bad':(tOv>0||pc>80)?'wr':'',msg=tMn>0?'🚨 Limit aur savings dono khatam! '+rs(tMn)+' minus ho gaya. Ab kharch roko. Kal naya limit milega, ye minus log me likha rahega.':tOv>0?'⚠️ Aaj ka limit khatam. '+rs(tOv)+' savings se ja raha hai (savings bachi '+rs(svN)+').':pc>80?'⚠️ Sirf '+rs(tL)+' bacha hai, sambhal ke!':'✅ Aaj '+rs(tL)+' tak kharch kar sakte ho. Jo bachega wo kal savings me jayega 💰';
+  if(cash<rem-.5)msg+=' · 📈 Asli paisa aage ke limit se kam hai, dhyan rakho.';
+  T='<div class="hero '+cls+'"><div class="hl">Aaj ka limit</div><div class="hb">'+rs(Math.max(0,tL))+'<small> bacha / '+rs(tl)+'</small></div><div class="bar"><i style="width:'+Math.min(100,pc)+'%"></i></div><div class="hm">'+msg+'</div><div class="hs"><div><small>Aaj kharch</small><b>'+rs(tdSp)+'</b></div><div><small>Savings 💰</small><b>'+rs(sp.save+svN+vbal())+'</b></div><div><small>Kal ka limit</small><b>'+(el<tot?rs(lim[el]):'-')+'</b></div><div><small>Asli paisa haath me</small><b>'+rs(cash)+'</b></div></div></div>'}
  $('td').innerHTML=T;
- var h='<b>Salary ka plan ('+c.need+' / '+c.want+' / '+c.save+')</b><div style="height:10px"></div>';
- ['need','want','save'].forEach(function(k){var p=al[k]?sp[k]/al[k]*100:0,col=k==='save'?(p>=100?'var(--ok)':'var(--ac)'):(p>100?'var(--bad)':p>80?'var(--wr)':'var(--ok)');
-  h+='<div class="gr"><div class="h"><span>'+GN[k]+'</span><span>'+rs(sp[k])+' / '+rs(al[k])+'</span></div><div class="bar"><i style="width:'+Math.min(100,p)+'%;background:'+col+'"></i></div><small>'+(k==='save'?(p>=100?'Target poora! 🎉':rs(Math.max(0,al[k]-sp[k]))+' aur bachana hai'):(p>100?rs(sp[k]-al[k])+' zyada kharch ho gaya ⚠️':rs(Math.max(0,al[k]-sp[k]))+' bacha hai'))+'</small></div>'});
+ $('sum').innerHTML=sal?'<div class="tiles"><div class="tile"><small>Kharch (cycle me)</small><b>'+rs(sp.need+sp.want)+'</b></div><div class="tile"><small>Savings (SIP + bachat)</small><b style="color:var(--ok)">'+rs(sp.save+svN+vbal())+'</b></div><div class="tile"><small>Minus ab tak</small><b style="color:'+(mt+tMn>0?'var(--bad)':'inherit')+'">'+rs(mt+tMn)+'</b></div><div class="tile"><small>Asli paisa bacha</small><b style="color:'+(left<0?'var(--bad)':'inherit')+'">'+rs(left)+'</b></div></div>':'';
+ var h='';
+ if(c.simple)h='<p class="mt" style="margin:12px 0 0">Salary '+rs(sal)+(ex?' + Extra '+rs(ex):'')+' − Ghar '+rs(home)+(fxb?' − Fixed '+rs(fxb):'')+' = <b style="color:var(--ink)">'+rs(flex)+'</b> kharch ke liye (~'+rs(flex/tot)+'/din)'+(sal&&!home?'<br>👆 "Ghar ko diya" daalo, tab sahi limit banega':'')+'</p>';
+ else{h='<b style="display:block;margin-top:12px">Salary ka plan ('+c.need+' / '+c.want+' / '+c.save+')</b><div style="height:10px"></div>';
+  ['need','want','save'].forEach(function(k){var p=al[k]?sp[k]/al[k]*100:0,col=k==='save'?(p>=100?'var(--ok)':'var(--ac)'):(p>100?'var(--bad)':p>80?'var(--wr)':'var(--ok)');
+   h+='<div class="gr"><div class="h"><span>'+GN[k]+'</span><span>'+rs(sp[k])+' / '+rs(al[k])+'</span></div><div class="bar"><i style="width:'+Math.min(100,p)+'%;background:'+col+'"></i></div></div>'})}
  $('bars').innerHTML=h;
- var cv=$('fc').value,o='';['need','want','save'].forEach(function(k){o+='<optgroup label="'+GN[k]+'">'+S.cats.filter(function(x){return x.g===k}).map(function(x){return'<option>'+esc(x.n)+'</option>'}).join('')+'</optgroup>'});$('fc').innerHTML=o;if(cv)$('fc').value=cv;
- var ent={},mx=el,l='',i;m.exp.forEach(function(e){(ent[e.d]=ent[e.d]||[]).push(e);mx=Math.max(mx,nd(st,pd(e.d))+1)});
- for(i=mx-1;i>=0;i--){var d=ds(new Date(st.getFullYear(),st.getMonth(),st.getDate()+i)),s=dy[d]||0,df=L-s,p=L?Math.min(100,s/L*100):(s?100:0),es=(ent[d]||[]).sort(function(a,b){return b.id-a.id});
-  l+='<div class="dc"><div class="sp"><b>'+pd(d).toLocaleDateString('en-IN',{day:'numeric',month:'short',weekday:'short'})+(d===td?' · Aaj':'')+'</b><span class="chip '+(df>=0?'cg':'cr')+'">'+(i>=el?'aage':df>=0?'+'+rs(df)+' bacha':rs(-df)+' zyada')+'</span></div><div class="bar"><i style="width:'+p+'%;background:'+(s>L?'var(--bad)':s>L*.8?'var(--wr)':'var(--ok)')+'"></i></div><small class="mt">Kharch '+rs(s)+' / limit '+rs(L)+(es.length?'':' · kuch nahi kharcha 🎉')+'</small>';
-  es.forEach(function(e){l+='<div class="it"><div>'+esc(e.c)+(isF(e)?' 🔒':'')+(e.n?'<small>'+esc(e.n)+'</small>':'')+'</div><div><b'+(g(e.c)==='save'?' style="color:var(--ok)"':'')+'>'+rs(e.a)+'</b><button class="x" data-e="'+e.id+'">✎</button><button class="x" data-d="'+e.id+'">✕</button></div></div>'});
-  l+='</div>'}
- $('lst').innerHTML=l||'<p class="mt">Abhi koi din nahi. Upar se pehla kharcha add karo.</p>';
+ $('inl').innerHTML=inc.map(function(x){return'<div class="it"><div>'+esc(x.n||'Extra')+'<small>'+fd(pd(x.d))+'</small></div><div><b style="color:var(--ok)">+'+rs(x.a)+'</b><button class="x" data-i="'+x.id+'">✕</button></div></div>'}).join('');
+ var cv=$('fc').value,o2='';['need','want','save'].forEach(function(k){o2+='<optgroup label="'+GN[k]+'">'+S.cats.filter(function(x){return x.g===k}).map(function(x){return'<option>'+esc(x.n)+'</option>'}).join('')+'</optgroup>'});$('fc').innerHTML=o2;if(cv)$('fc').value=cv;
+ var ent={},mx=el,ls='',i;m.exp.forEach(function(e){(ent[e.d]=ent[e.d]||[]).push(e);mx=Math.max(mx,nd(st,pd(e.d))+1)});
+ for(i=mx-1;i>=0;i--){var d=dstr(st,i),s1=dy[d]||0,q=D[i],isT=live&&i===el-1,L=lim[Math.min(i,tot-1)],es=(ent[d]||[]).sort(function(a,b){return b.id-a.id}),cls2='',chip,cells;
+  if(q){cls2=q.mn>0?'b2':q.u>0?'w2':'';chip=q.mn>0?['cr',rs(q.mn)+' minus']:q.u>0?['cw','savings se '+rs(q.u)]:['cg','+'+rs(q.b)+' savings me'];cells=[['Limit',q.l],['Kharch',q.s]];if(q.b>0)cells.push(['Bacha',q.b]);if(q.u>0)cells.push(['Savings se',q.u]);if(q.mn>0)cells.push(['Minus',q.mn]);cells.push(['Savings',q.sv])}
+  else if(isT){cls2=tMn>0?'b2 t2':tOv>0?'w2 t2':'t2';chip=tMn>0?['cr',rs(tMn)+' minus']:tOv>0?['cw','savings se '+rs(fSv)]:['cp','chal raha hai'];cells=[['Limit',tl],['Kharch',tdSp],[tOv>0?'Zyada':'Abhi bacha',tOv>0?tOv:Math.max(0,tL)]]}
+  else{chip=['cp','aage'];cells=[['Limit',L],['Kharch',s1]]}
+  ls+='<div class="dc '+cls2+'"><div class="sp"><b>'+pd(d).toLocaleDateString('en-IN',{day:'numeric',month:'short',weekday:'short'})+(isT?' · Aaj':'')+'</b><span class="chip '+chip[0]+'">'+chip[1]+'</span></div><div class="bar"><i style="width:'+(L?Math.min(100,s1/L*100):(s1?100:0))+'%;background:'+(s1>L?'var(--bad)':s1>L*.8?'var(--wr)':'var(--ok)')+'"></i></div><div class="dg">'+cells.map(function(x){return'<div><small>'+x[0]+'</small><b>'+rs(x[1])+'</b></div>'}).join('')+'</div>'+(es.length||i>=el?'':'<small class="mt">Kuch kharch nahi hua 🎉</small>');
+  es.forEach(function(e){ls+='<div class="it"><div>'+esc(e.c)+(isF(e)?' 🔒':'')+(e.n?'<small>'+esc(e.n)+'</small>':'')+'</div><div><b'+(g(e.c)==='save'?' style="color:var(--ok)"':'')+'>'+rs(e.a)+'</b><button class="x" data-e="'+e.id+'">✎</button><button class="x" data-d="'+e.id+'">✕</button></div></div>'});
+  ls+='</div>'}
+ $('lst').innerHTML=ls||'<p class="mt">Abhi koi din nahi. Upar se pehla kharcha likho.</p>';
  var cs=Object.keys(bc).sort(function(a,b){return bc[b]-bc[a]}),tt=out||1;
  $('cat').innerHTML=cs.map(function(k){return'<div class="gr" style="margin:0 0 8px"><div class="h"><span>'+esc(k)+'</span><span>'+rs(bc[k])+'</span></div><div class="bar"><i style="width:'+bc[k]/tt*100+'%;background:var(--ac)"></i></div></div>'}).join('')||'<p class="mt">Entries aane par yahan dikhega.</p>';
  var old=!S.cfg.bk||Date.now()-S.cfg.bk>30*864e5;$('bnr').innerHTML=old&&Object.keys(S.months).some(function(k){return S.months[k].exp.length})?'<div class="bn">💾 Backup liye hue 30 din se zyada ho gaye. Neeche se backup download kar lo.</div>':'';
@@ -135,7 +173,8 @@ $('im').onclick=function(){$('imf').click()};
 $('imf').onchange=function(){var f=this.files[0];if(!f)return;var r=new FileReader();r.onload=function(){try{var j=JSON.parse(r.result);if(!j.months||!j.cats||!j.cfg)throw 0;if(confirm('Abhi ka saara data is backup se badal jayega. Pakka?')){S=j;save();render();toast('Backup wapas aa gaya ✅')}}catch(e){toast('Ye backup file sahi nahi lagti')}};r.readAsText(f);this.value=''};
 $('cs').onclick=function(){var r=['Date,Month,Category,Group,Note,Amount'];Object.keys(S.months).sort().forEach(function(k){S.months[k].exp.forEach(function(e){r.push([e.d,k,'"'+e.c+'"',g(e.c),'"'+(e.n||'').replace(/"/g,'""')+'"',e.a].join(','))})});dl('paisa_kharche.csv',r.join('\n'),'text/csv')};
 function qadd(){var t=$('qa').value.trim();if(!t)return;
- if(t[0]==='?'){var a=parseFloat(t.replace(/[^\d.]/g,''));if(!(a>0)){toast('? ke baad amount likho');return}var r=ST.live?ST.tl-ST.ts:0;alert(r>=a?'✅ Kar sakte ho. Aaj ka '+rs(r)+' bacha hai, ye kharch ke baad '+rs(r-a)+' bachega.':'🚫 Mat karo! Aaj sirf '+rs(Math.max(0,r))+' bacha hai, ye '+rs(a-Math.max(0,r))+' zyada hai. Kal ka limit bhi ghat jayega.');return}
+ if(t[0]==='+'){var q=qp(t.slice(1));if(!q||!(q.a>0)){toast('+ ke baad amount likho');return}addI(q.d,q.a,q.n||'Extra');$('qa').value='';aft(-1);toast('+'+rs(q.a)+' extra judd gaya, limit badh gayi ✅');return}
+ if(t[0]==='?'){var a=parseFloat(t.replace(/[^\d.]/g,''));if(!(a>0)){toast('? ke baad amount likho');return}var r=ST.live?ST.tl-ST.ts:0;var nd0=a-Math.max(0,r),sa=ST.live?ST.sa:0;alert(r>=a?'✅ Kar sakte ho. Aaj ka '+rs(r)+' bacha hai, ye kharch ke baad '+rs(r-a)+' bachega.':nd0<=sa?'⚠️ Aaj ke limit se '+rs(nd0)+' zyada hai, wo savings se katega (savings bachegi '+rs(sa-nd0)+').':'🚫 Mat karo! Limit aur savings dono ke baad '+rs(nd0-sa)+' minus ho jayega.');return}
  var b=ST.tl-ST.ts,n=0,ms=[];t.split(/[\n;]+/).forEach(function(x){var q=qp(x);if(q&&q.a>0){addE(q.d,q.a,q.c,q.n);n++;ms.push((q.n||'kharcha')+' → '+q.c)}});
  if(!n){toast('Amount nahi mila. Aise likho: zomato 250');return}$('qa').value='';aft(b);toast(ms.join(', ')+' (galat ho to ✎ dabao)')}
 function sms(t){var P=t.split(/\n\s*\n/);if(P.length<2)P=t.split('\n');var n=0,k=0,sl=0,b=ST.tl-ST.ts;
@@ -149,8 +188,11 @@ function sms(t){var P=t.split(/\n\s*\n/);if(P.length<2)P=t.split('\n');var n=0,k
 $('qb').onclick=qadd;$('qa').onkeydown=function(e){if(e.key==='Enter')qadd()};
 $('sb').onclick=function(){sms($('sms').value);$('sms').value=''};
 $('smc').onclick=function(){if(!navigator.clipboard||!navigator.clipboard.readText){toast('Clipboard allow nahi, SMS neeche paste karo');return}navigator.clipboard.readText().then(function(t){sms(t)}).catch(function(){toast('Clipboard permission nahi mili, paste karke button dabao')})};
+$('hm').onchange=function(){M().home=+this.value||0;save();render()};$('smp').onchange=function(){S.cfg.simple=this.checked?1:0;save();render()};
 $('sd').onchange=function(){var v=Math.min(28,Math.max(1,Math.round(+this.value)||7));rb(v);cm=ck();setd();render();toast('Ab har mahine '+v+' tareekh se naya cycle ✅')};
 document.addEventListener('click',function(e){var k=e.target.getAttribute&&e.target.getAttribute('data-e');if(!k)return;var x=M().exp.filter(function(y){return String(y.id)===k})[0];if(!x)return;
  var r=prompt('Nayi category ka number likho:\n'+S.cats.map(function(c,i){return(i+1)+'. '+c.n}).join('\n')),c=S.cats[(+r)-1];if(!c)return;x.c=c.n;var w=(x.n||'').toLowerCase().replace(/ \(fixed\)$/,'').split(' ')[0];if(w)S.mem[w]=c.n;save();render();toast('Category badal gayi, aage yaad rakhunga ✅')});
-setd();render();
+$('ib').onclick=function(){var a=+$('ia').value;if(!(a>0)){toast('Amount likho');return}addI(ds(new Date()),a,$('inn').value.trim()||'Extra');$('ia').value='';$('inn').value='';aft(-1);toast('Paisa judd gaya, limit badh gayi ✅')};
+document.addEventListener('click',function(e){var k=e.target.getAttribute&&e.target.getAttribute('data-i');if(k&&confirm('Ye paisa hatana hai?')){var m=M();m.inc=(m.inc||[]).filter(function(x){return String(x.id)!==k});save();render()}});
+setd();render();renderV();
 </script></body></html>
